@@ -158,6 +158,85 @@
     font-size: 1.2rem;
     gap: 8px;
   }
+  .prize-badge {
+    position: fixed;
+    top: 100px;           /* Below navbar */
+    right: 20px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold 1.1rem 'Poppins', sans-serif;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    z-index: 999;
+    text-align: center;
+    animation: pulse 2s infinite;
+    border: 3px solid #000;
+    transform: rotate(12deg);
+    transition: all 0.3s ease;
+  }
+
+  .prize-text {
+    display: block;
+    line-height: 1.3;
+  }
+
+  .prize-text strong {
+    font-size: 1.6rem;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* Trophy icon */
+  .prize-text i {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% { transform: rotate(12deg) scale(1); }
+    50% { transform: rotate(12deg) scale(1.05); }
+    100% { transform: rotate(12deg) scale(1); }
+  }
+
+  /* MOBILE FIX – No Overlap Ever */
+  @media (max-width: 768px) {
+    .prize-badge {
+      top: 90px;
+      right: 10px;
+      padding: 10px 16px;
+      font-size: 1rem;
+      transform: rotate(8deg);
+    }
+    .prize-text strong {
+      font-size: 1.4rem;
+    }
+    .prize-text i {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .prize-badge {
+      top: 85px;
+      right: 8px;
+      padding: 8px 14px;
+      font-size: 0.95rem;
+      transform: rotate(6deg);
+    }
+    .prize-text strong {
+      font-size: 1.3rem;
+    }
+  }
+
+  /* If navbar is taller on mobile, push badge lower */
+  @media (max-width: 992px) {
+    .prize-badge {
+      top: 100px !important;
+    }
+  }
   .prize-badge i { font-size: 1.6rem; }
   .prize-badge strong { font-size: 1.8rem; }
 }
@@ -629,13 +708,13 @@
   </section> -->
   <!-- Hero Section with Unique Prize Badge -->
 <section id="home" class="hero">
-  <!-- Unique Shape Prize Badge -->
-  <div class="prize-badge">
-    <span class="prize-text">
-      <i class="fas fa-trophy"></i> Prize Pool<br>
-      <strong>₹1,00,000</strong>
-    </span>
-  </div>
+<!-- Unique Shape Prize Badge – NOW 100% MOBILE SAFE -->
+<div class="prize-badge">
+  <span class="prize-text">
+    Prize Pool<br>
+    <strong>₹1,00,000</strong>
+  </span>
+</div>
 
   <div class="dept-line">DEPARTMENT OF AIML | AI&DS | IoT</div>
   <div class="presents">presents</div>
